@@ -1,14 +1,14 @@
 /* joins: select all the computers from the products table:
 using the products table and the categories table, return the product name and the category name */
- SELECT p.Name as Product, c.Name as Category FROM products as p
+ SELECT p.Name as Product, c.Name AS Category FROM products as p
  INNER JOIN categories AS c ON p.CategoryID = c.CategoryID
  WHERE c.Name = "Computers";
  
  
 /* joins: find all product names, product prices, and products ratings that have a rating of 5 */
  SELECT p.Name, p.Price, r.Rating FROM products AS p
- INNER JOIN reviews as r on p.ProductID = r.ProductID
- where r.Rating = 5;
+ INNER JOIN reviews AS r ON p.ProductID = r.ProductID
+ WHERE r.Rating = 5;
  
  
 /* joins: find the employee with the most total quantity sold.  use the sum() function and group by */
@@ -20,7 +20,7 @@ LIMIT 2;
 
 
 /* joins: find the name of the department, and the name of the category for Appliances and Games */
-SELECT d.Name as Department, c.Name as Category FROM departments AS d
+SELECT d.Name AS Department, c.Name AS Category FROM departments AS d
 INNER JOIN categories as c ON d.DepartmentID = c.DepartmentID
 WHERE c.Name = "Appliances" OR c.Name = "Games";
 
